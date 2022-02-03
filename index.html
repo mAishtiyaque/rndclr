@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomerator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--link rel="stylesheet" href="st.css"-->
+    <style>
+        .bc {
+            font-size: 92px;
+            text-shadow: 5px 5px 20px #4020d3;
+        }
+        #para{
+            font-size:xx-large;
+            margin-left: 25vw;
+        }
+        #dev{
+            font-size:large;
+            margin-left: 5vw;
+        }
+        #dev::before{
+            content: 'Goto my other Repo';
+            position: absolute;
+            font-size: x-small;
+            transform: translateY(-10px);
+        }
+        #dev::after{
+            content: '⮯';
+            position: absolute;
+            font-size:large;
+            transform: translate(-88px,-12px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bc">
+        <div class="row">
+            <div class="col">
+                <h1 id="paa" class="bc">Randomerator</h1>
+            </div>
+        </div>
+    </div>
+    <p id='para'></p>
+    <hr>
+    <a href="https://maishtiyaque.github.io/Link/"><h4 id='dev' title="Goto my other repo">Md Ishtiyaque Ahmad</h4></a>
+    <script>
+        randomNumber=(min, max) =>Math.floor(Math.random() * (max - min) + min);
+        paa=document.getElementById('paa');
+        para=document.getElementById('para');
+        dev=document.getElementById('dev');
+        var ele = [];
+        ele.push(para,paa,dev)
+        setInterval(function () {
+            r=randomNumber(0, 256)
+            g=randomNumber(0, 256)
+            b=randomNumber(0, 256)
+            para.innerText=`RGB : (${r}, ${g}, ${b})`
+            for(let i in ele){
+                ele[i].style.color = `rgb(${r}, ${g}, ${b})`
+                if (ele[i].id!='dev')
+                ele[i].style.textShadow = `4px 4px 16px rgb(${r}, ${g}, ${b}),
+                                        -4px -4px 16px rgb(${r}, ${g}, ${b})`
+        }
+
+    }, 1000);
+        
+   
+        
+      
+    </script>
+    <!--BOOTSTRAP-->
+    <script src=" https://kit.fontawesome.com/1839f51cfd.js" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
